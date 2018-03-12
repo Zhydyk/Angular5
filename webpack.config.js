@@ -4,6 +4,7 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
+        polyfills: './src/polyfills.ts',
         main: './src/app.ts',
         vendor: ['jquery']
     },
@@ -43,5 +44,9 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor'
         })
-    ]
+    ],
+        devtool: "source-map",
+        devServer: {
+        historyApiFallback: true
+    }
 };
