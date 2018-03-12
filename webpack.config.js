@@ -1,10 +1,10 @@
-var path = require('path');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        polyfills: './src/polyfills.ts',
+        polyfills: './src/polyfill.ts',
         main: './src/app.ts',
         vendor: ['jquery']
     },
@@ -29,6 +29,10 @@ module.exports = {
                 test: /\.ts$/,
                 enforce: "pre",
                 loader: 'tslint-loader'
+            },
+            {
+                test: /\.html$/,
+                loader: "html-loader"
             },
             {
                 test: /\.scss$/,
