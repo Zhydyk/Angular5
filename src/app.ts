@@ -1,11 +1,4 @@
-import msg from './contents';
-import * as $ from 'jquery';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {AppModule} from './app/app.module';
 
-import './message.scss';
-
-
-$( () => {
-    $("<div id='message'>")
-    .text(msg+"!")
-    .appendTo("body");
-});
+platformBrowserDynamic().bootstrapModule(AppModule);
